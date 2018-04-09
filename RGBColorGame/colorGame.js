@@ -14,6 +14,9 @@ var colorDisplay = document.querySelector("#colorDisplay");
 var playerMessage = document.querySelector("#message");
 var title = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var easy = document.querySelector("#easyBtn");
+var hard = document.querySelector("#hardBtn");
+
 
 resetButton.addEventListener("click", function () {
     colors = generateRandomColorArray(difficulty);
@@ -22,7 +25,7 @@ resetButton.addEventListener("click", function () {
     colorSquares(difficulty);
     colorDisplay.textContent = pickedColor;
     title.style.backgroundColor = "";
-    resetButton.textContent = "New Colors";    
+    resetButton.textContent = "New Colors";
 })
 
 colorDisplay.textContent = pickedColor;
