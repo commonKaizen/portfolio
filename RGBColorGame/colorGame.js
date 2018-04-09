@@ -22,6 +22,7 @@ resetButton.addEventListener("click", function () {
     colorSquares(difficulty);
     colorDisplay.textContent = pickedColor;
     title.style.backgroundColor = "";
+    resetButton.textContent = "New Colors";    
 })
 
 colorDisplay.textContent = pickedColor;
@@ -36,6 +37,7 @@ for (var i = 0; i < squares.length; i++) {
             //     squares[i].style.backgroundColor = pickedColor;
             // }
             playerMessage.textContent = "You win!";
+            resetButton.textContent = "Play Again?";
             title.style.backgroundColor = pickedColor;
         } else {
             this.style.backgroundColor = "#232323";
