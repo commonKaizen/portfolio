@@ -13,6 +13,9 @@ var pickedColor = pickAColor();
 var colorDisplay = document.querySelector("#colorDisplay");
 var playerMessage = document.querySelector("#message");
 var title = document.querySelector("h1");
+var resetButton=document.querySelector("#reset");
+
+resetButton.addEventListener("click",function(){console.log('clicked')})
 
 colorDisplay.textContent = pickedColor;
 
