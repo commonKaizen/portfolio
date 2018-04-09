@@ -13,9 +13,16 @@ var pickedColor = pickAColor();
 var colorDisplay = document.querySelector("#colorDisplay");
 var playerMessage = document.querySelector("#message");
 var title = document.querySelector("h1");
-var resetButton=document.querySelector("#reset");
+var resetButton = document.querySelector("#reset");
 
-resetButton.addEventListener("click",function(){console.log('clicked')})
+resetButton.addEventListener("click", function () {
+    colors = generateRandomColorArray(difficulty);
+    pickedColor = pickAColor();
+    playerMessage.textContent = "";
+    colorSquares(difficulty);
+    colorDisplay.textContent = pickedColor;
+    title.style.backgroundColor = "";
+})
 
 colorDisplay.textContent = pickedColor;
 
@@ -61,4 +68,14 @@ function pickRandomColor() {
     var blue = Math.floor(Math.random() * 256);
     return "rgb(" + red + ", " + green + ", " + blue + ")";
 
+}
+
+function colorSquares(num) {
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = "";
+        if (i >= difficulty) {
+            squares[i].style.display = "none";
+        }
+    }
 }
